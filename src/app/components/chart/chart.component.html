@@ -1,1 +1,12 @@
-<p>chart works!</p>
+<canvas
+  baseChart
+  [data]="lineChartData"
+  [options]="lineChartOptions"
+  [type]="lineChartType"
+></canvas>
+<div class="d-flex justify-content-around mt-4">
+  <button (click)="onUpdateDays(1)" class="btn btn-custom">24 hours</button>
+  <button (click)="onUpdateDays(30)" class="btn btn-custom">30 days</button>
+  <button (click)="onUpdateDays(90)" class="btn btn-custom">90 days</button>
+  <button (click)="onUpdateDays(365)" class="btn btn-custom">1 year</button>
+</div>

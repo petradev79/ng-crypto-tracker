@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-// import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -48,6 +48,7 @@ import { ChartComponent } from './components/chart/chart.component';
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

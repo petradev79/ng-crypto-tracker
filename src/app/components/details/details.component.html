@@ -3,7 +3,7 @@
   <h3 class="text-center" style="font-size: 23px">
     {{ data.name }}
   </h3>
-  <h2 [innerHtml]="data.description?.en.split('. ')[0]"></h2>
+  <p [innerHtml]="data.description?.en.split('. ')[0]"></p>
   <div class="details__group">
     <span class="details__title">Rank: </span>
     <span class="details__value">{{ data.market_cap_rank }}</span>

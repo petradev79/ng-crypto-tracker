@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment as env } from '../../environments/environment';
-import { Coin, CoinDetails } from '../models';
+import { Coin, CoinDetails, CoinChart } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -27,8 +27,12 @@ export class HttpService {
     return this.http.get<CoinDetails>(`${env.BASE_URL}/${coinId}`);
   }
 
-  getGrpahicalCurrencyData(coinId: string, currency: string, days: number) {
-    return this.http.get<any>(
+  getGrpahicalCurrencyData(
+    coinId: string,
+    currency: string,
+    days: number
+  ): Observable<CoinChart> {
+    return this.http.get<CoinChart>(
       `${env.BASE_URL}/${coinId}/market_chart?vs_currency=${currency}&days=${days}`
     );
   }

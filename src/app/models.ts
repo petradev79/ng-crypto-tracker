@@ -84,3 +84,9 @@ export interface Image {
   small: string;
   thumb: string;
 }
+
+export interface CoinChart {
+  market_caps: any[];
+  prices: any[];
+  total_volumes: any[];
+}
