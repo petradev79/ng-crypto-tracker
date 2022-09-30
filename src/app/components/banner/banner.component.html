@@ -1,0 +1,25 @@
+<div class="banner">
+  <div class="container">
+    <div class="banner__header">
+      <h2>Crypto Checker YT</h2>
+      <h6>Check all the crypto currency lastest updates</h6>
+    </div>
+    <div class="banner__sub-header">
+      <marquee
+        behavior="scroll"
+        onmouseover="stop()"
+        onmouseout="start()"
+        loop="infinite"
+        direction="left"
+      >
+        <div class="row">
+          <ng-container *ngFor="let coin of data">
+            <div class="col-1">
+              <app-card [coin]="coin"></app-card>
+            </div>
+          </ng-container>
+        </div>
+      </marquee>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card">
+  <img [src]="coin.image" width="100" class="img-fluid" [alt]="coin.id" />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ coin.symbol | uppercase }}
+      <span class="text-danger"
+        >{{ coin.market_cap_change_percentage_24h }}%</span
+      >
+    </h5>
+    <p class="card-text">
+      {{ coin.current_price | currency: currency }}
+    </p>
+  </div>
+</div>
