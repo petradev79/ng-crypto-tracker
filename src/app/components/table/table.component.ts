@@ -1,4 +1,10 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,14 +19,16 @@ import { Coin } from '../../models';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, AfterViewInit {
   currency!: string;
   @Input() data!: Coin[];
   dataSource!: MatTableDataSource<Coin>;
   displayedColumns: string[] = [
+    'image',
     'symbol',
-    'current_price',
-    'price_change_percentage_24h',
+    'name',
+    'price',
+    'change',
     'market_cap',
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -37,9 +45,11 @@ export class TableComponent implements OnInit {
       this.currency = val;
     });
     this.dataSource = new MatTableDataSource(this.data);
+  }
+
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log(this.dataSource);
   }
 
   applyFilter(event: Event) {

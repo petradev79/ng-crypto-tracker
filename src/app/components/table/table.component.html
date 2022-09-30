@@ -1,5 +1,4 @@
 <div class="container">
-  <!-- Table -->
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
     <input
@@ -13,32 +12,41 @@
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
-      <!-- ID Column -->
-      <ng-container matColumnDef="symbol">
+      <ng-container matColumnDef="image">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Coin</th>
         <td mat-cell *matCellDef="let row">
-          <img [src]="row.image" width="50" alt="" />
+          <img [src]="row.image" width="30" alt="Coin" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
+        <td mat-cell *matCellDef="let row">
           <span class="mx-2">{{ row.symbol | uppercase }}</span>
         </td>
       </ng-container>
 
-      <!-- Progress Column -->
-      <ng-container matColumnDef="current_price">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">
+          <span class="mx-2">{{ row.id | uppercase }}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
         <td mat-cell *matCellDef="let row">
           {{ row.current_price | currency: currency }}
         </td>
       </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="price_change_percentage_24h">
+      <ng-container matColumnDef="change">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>24h Change</th>
         <td mat-cell *matCellDef="let row">
           {{ row.price_change_percentage_24h }}%
         </td>
       </ng-container>
 
-      <!-- Fruit Column -->
       <ng-container matColumnDef="market_cap">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Market Cap</th>
         <td mat-cell *matCellDef="let row">
@@ -62,9 +70,7 @@
     </table>
 
     <mat-paginator
-      [length]="data.length"
-      pageSize="10"
-      [pageSizeOptions]="[10, 25, 50, 100]"
+      [pageSizeOptions]="[5, 10, 25, 50]"
       aria-label="Select page of users"
     ></mat-paginator>
   </div>
