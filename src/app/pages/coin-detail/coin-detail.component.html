@@ -1,1 +1,24 @@
-<p>coin-detail works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-details [data]="coinData" [currency]="currency"></app-details>
+    </div>
+    <div class="col-md-8">
+      <!-- <canvas style="width: 300px;" baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"></canvas> -->
+      <div class="d-flex justify-content-around">
+        <button (click)="getGraphData(1)" class="btn btn-custom">
+          24 hours
+        </button>
+        <button (click)="getGraphData(30)" class="btn btn-custom">
+          30 days
+        </button>
+        <button (click)="getGraphData(90)" class="btn btn-custom">
+          90 days
+        </button>
+        <button (click)="getGraphData(365)" class="btn btn-custom">
+          1 year
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

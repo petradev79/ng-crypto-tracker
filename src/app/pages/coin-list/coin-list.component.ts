@@ -11,7 +11,7 @@ import { Coin } from 'src/app/models';
 })
 export class CoinListComponent implements OnInit {
   currency: string = 'USD';
-  bannerData: Coin[] = [];
+  trendingData: Coin[] = [];
   data: Coin[] = [];
 
   constructor(
@@ -20,23 +20,23 @@ export class CoinListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getBannerData();
-    this.getAllData();
+    this.onGetTrendingCurrencies();
+    this.onGetAllCurrencies();
     this.currencyService.getCurrency().subscribe((val) => {
       this.currency = val;
-      this.getAllData();
-      this.getBannerData();
+      this.onGetAllCurrencies();
+      this.onGetTrendingCurrencies();
     });
   }
 
-  getBannerData() {
-    this.httpService.getTrendingCurrency(this.currency).subscribe((res) => {
-      this.bannerData = res;
+  onGetTrendingCurrencies() {
+    this.httpService.getTrendingCurrencies(this.currency).subscribe((res) => {
+      this.trendingData = res;
     });
   }
 
-  getAllData() {
-    this.httpService.getCurrency(this.currency).subscribe((res) => {
+  onGetAllCurrencies() {
+    this.httpService.getAllCurrencies(this.currency).subscribe((res) => {
       this.data = res;
     });
   }

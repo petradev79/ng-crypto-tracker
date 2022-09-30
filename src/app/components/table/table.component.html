@@ -56,7 +56,7 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr
-        (click)="gotoDetails(row)"
+        (click)="onGetCurrencyDetails(row.id)"
         mat-row
         *matRowDef="let row; columns: displayedColumns"
       ></tr>

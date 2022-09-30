@@ -40,7 +40,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data);
     this.currencyService.getCurrency().subscribe((val) => {
       this.currency = val;
     });
@@ -61,7 +60,7 @@ export class TableComponent implements OnInit, AfterViewInit {
     }
   }
 
-  gotoDetails(row: any) {
-    this.router.navigate(['coin-detail', row.id]);
+  onGetCurrencyDetails(id: string) {
+    this.router.navigate(['coin-detail', id]);
   }
 }

@@ -21,6 +21,8 @@ import { CoinDetailComponent } from './pages/coin-detail/coin-detail.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { TableComponent } from './components/table/table.component';
 import { CardComponent } from './components/card/card.component';
+import { DetailsComponent } from './components/details/details.component';
+import { ChartComponent } from './components/chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { CardComponent } from './components/card/card.component';
     BannerComponent,
     TableComponent,
     CardComponent,
+    DetailsComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
