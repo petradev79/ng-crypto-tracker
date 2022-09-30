@@ -10,21 +10,15 @@ table {
 td,
 th {
   width: 15%;
+  cursor: pointer;
 }
-
-// .mat-column-image {
-//   width: 10%;
-// }
-// .mat-column-symbol {
-//   width: 10%;
-// }
 
 :host ::ng-deep .mat-sort-header-content {
   color: #fff;
 }
 
 :host ::ng-deep .mat-paginator-outer-container {
-  background-color: rgb(36, 37, 37);
+  background-color: rgb(50, 56, 56);
 }
 
 :host ::ng-deep tr.mat-header-row {
